@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+    <h1 style="text-align: center; color:cornsilk">Security for Your Personal Information</h1>
+    <Head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p style="text-align: center; font-size: larger; color: cornsilk;">
+An important topic, but why would anyone want to get your information? Despite what you might think personal information can be sold for quite a bit. Why don't you select what kind of information you usually put out there, and see the top dollar amount for how much it could be sold for by would-be thieves. Check the inspect console for the amounts. Remember to always be aware of the credibility of the sites that you use, and even then make sure to check your accounts for suspicous activities. Even Google has breaches sometimes.
+</p>
+<style>
+    form{
+        font-size: larger;
+    }
+    body{
+        background-image: url('https://media-exp1.licdn.com/dms/image/C4D1BAQFc5WDg_zC3Vw/company-background_10000/0/1577136967211?e=2159024400&v=beta&t=Aykj37ClOFvsxxO7gXITkE_3UMaFp4w39IcJvtvQiao');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    label{
+        margin: 0em;
+        padding: 0em;
+        color: cornsilk;
+    }
+    
+</style>
+    </Head>
+    <br>
+
+
+
+</br>
+    <body>
+    <form>
+
+    <tr>
+        <td>
+            <div class="checkbox">
+                <input type="checkbox" id="license" name="license" value=20 onchange="doit(license)"><label>Drivers License</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+                <input type="checkbox" id="ssn" name="ssn" value=1 onchange="doit(ssn)"><label>Social Security Number</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="pay" name="pay" value=200 onchange="doit(pay)"><label>Payment Login Information</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="diploma" name="diploma" value=400 onchange="doit(diploma)"><label>Diplomas</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="pass" name="pass" value=2000 onchange="doit(pass)"><label>Passport</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="loyal" name="loyal" value=20 onchange="doit(loyal)"><label>Loyalty Accounts</label></input>
+            </div>                
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="login" name="login" value=1 onchange="doit(login)"><label>Non-financial Institution Logins</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input type="checkbox" id="med" name="med" value=1000 onchange=doit(med)><label>Medical Records</label></input>
+            </div>
+        </td>
+        <td>
+            <div class="checkbox">
+        <input class="checkbox"type="checkbox" id="sub" name="sub" value=10 onchange=doit(sub)><label>Subscription Services</label></input><br></br>
+            </div>
+        </td>
+    </tr>
+        
+        <select id="card" onchange="doitC(card)">
+            <option value=0>Select</option>
+            <option value=110 onchange="doitC(card)">Just the number</option>
+            <option value=115 onchange="doitC(card)">With CVV number</option>
+            <option value=125 onchange="doitC(card)">With bank info</option>
+            <option value=140 onchange="doitC(card)">Full info</option>
+        </select>
+        <label for="card">Credit/Debit Card</label><br><br></br></br>
+        <div onclick="submit()" style="display:inline-block;
+        color:#444;
+        border:1px solid #CCC;
+        background:#DDD;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+        cursor:pointer;
+        vertical-align:middle;
+        max-width: 100px;
+        padding: 5px;
+        text-align: center;">Submit</div>
+        <button style="display:inline-block;
+        color:#444;
+        border:1px solid #CCC;
+        background:#DDD;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+        cursor:pointer;
+        vertical-align:middle;
+        max-width: 100px;
+        padding: 8px;
+        text-align: center;">Refresh</button>
+    </form>
+    <script type="text/javascript">
+    var c=0
+    var b=0;
+    function doit(thing){
+        if(thing.checked){
+            c+=parseInt(thing.value)
+        }
+        else if(!thing.checked){
+            c-=parseInt(thing.value)
+        }
+        
+    }
+    function doitC(thing){
+        if (b==0){
+            b=parseInt(thing.value)
+            c+=b
+        }
+        else if(!b==0){
+            c-=b
+            b=parseInt(thing.value)
+            c+=b
+        }
+    
+    }
+    function submit(){
+        alert("$"+c)
+    }
+       </script>
+    <style>
+        form{
+           position: relative; 
+           left: 60px;
+           top: 40px;
+        }
+    </style>
+    
+
+    </body>
+</html>
