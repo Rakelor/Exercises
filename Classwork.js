@@ -15,7 +15,7 @@ function temp(x){
 return ((x-32)*(5/9));
 }
 
-for (let i=0;i<y.length-1i++){
+for (let i=0;i<y.length-1;i++){
     a.push(temp(z[i]))
     a.push(y[i])
 }
