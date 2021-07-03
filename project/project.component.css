@@ -1,0 +1,36 @@
+
+    div.item{
+        border: 2px solid lightgoldenrodyellow;
+        width: 40%;
+        height: 20vmax;
+        margin:20px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    div.cartItem{
+        border-bottom: 2px solid black;
+        margin-top: 30px;
+    }
+    button.Add{
+        float:right;
+        position: relative;
+        top:15vmax;
+    }
+
+    button.Fav{
+        float:right;
+        position: relative;
+        top:15vmax;
+
+    }
+
+    p{
+        float:inline-end;
+        background-color: aliceblue;
+    }
+    img{
+        max-width: 100%;
+        max-height: 100%;
+        background-repeat: no-repeat;
+    }

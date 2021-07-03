@@ -1,0 +1,81 @@
+<body>
+<div class="flex-container" style="float: left; width: 60%; border: 2px solid green;">
+    <p>
+        <label for="Category">Category</label>
+        <select #Category (change)="changeCat(Category)">
+            <option value="Select">Select</option>
+            <option value="Electronic">Electronic</option>
+            <option value="Vehicle">Vehicle</option>
+        </select>
+    </p>
+    <ng-container [ngSwitch]="Category.value">
+    <ng-container *ngSwitchCase="'Select'">
+        <ng-container *ngTemplateOutlet="Select"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Electronic'">
+        <ng-container *ngTemplateOutlet="Electronic"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'Vehicle'">
+        <ng-container *ngTemplateOutlet="Vehicle"></ng-container>
+    </ng-container>
+    </ng-container>
+    
+</div>
+
+
+<div id="cartItem" style="margin-left: 5em; float: left;width: 30%; border: 2px solid green; height: 48vmax;">
+    <div *ngFor = "let i of cart">
+        <p>Product:  {{i.name}}</p>
+         <p>Price: ${{i.value}}</p>
+     </div>
+     
+     <p>Total: ${{totalPrice}}</p>
+</div>
+
+
+</body>
+
+<ng-template #Select>
+    <ng-container *ngFor="let item of items;let i = index">
+    <div class="item" *ngIf="Category.value=='Select'"  style="background-image: url('{{item.img}}')">
+       <p>{{item.name}}     
+       ${{item.value}}</p>
+       <div>
+           <button id="b{{i}}" class="Fav" (click)="fav($event)">Favorite</button>
+           <button class="Add" (click)="add(item)">Add to Cart</button>
+           </div>
+       
+
+   </div>
+</ng-container>
+</ng-template>
+
+<ng-template #Electronic>
+    <ng-container *ngFor="let item of items;let i = index">
+    <div class="item" *ngIf="item.category=='Electronic'&&Category.value=='Electronic'"  style="background-image: url('{{item.img}}')">
+       <p>{{item.name}}     
+       ${{item.value}}</p>
+       <div>
+            <button id="b{{i}}" class="Fav" (click)="fav($event)">Favorite</button>
+            <button class="Add" (click)="add($event)">Add to Cart</button>
+           </div>
+       
+
+   </div>
+</ng-container>
+</ng-template>
+
+<ng-template #Vehicle>
+    <ng-container *ngFor="let item of items;let i = index">
+    <div class="item" *ngIf="item.category=='Vehicle'&& Category.value=='Vehicle'"  style="background-image: url('{{item.img}}')">
+       <p>{{item.name}}     
+       ${{item.value}}</p>
+       <div>
+            <button id="b{{i}}" class="Fav" (click)="fav($event)">Favorite</button>
+            <button class="Add" (click)="add($event)">Add to Cart</button>
+           </div>
+       
+
+   </div>
+</ng-container>
+</ng-template>
